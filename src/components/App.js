@@ -12,10 +12,10 @@ class App extends Component {
     return (
       
       <Contain>
-//   <h1>Phonebook</h1>
+   <h1>Phonebook</h1>
   <FormContacts/>
 
-//   <h2>Contacts</h2>
+   <h2>Contacts</h2>
 {/* //   // <Filter ... />
 //   // <ContactList ... /> */}
 </Contain>
