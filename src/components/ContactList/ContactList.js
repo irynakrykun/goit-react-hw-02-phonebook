@@ -1,14 +1,14 @@
 import Contact from 'components/Contact/Contact';
-
+import { List,ListItem} from './ContactList.styled';
 const ContactList = ({ items,onDelete }) => {
   return (
-    <ul>
+    <List>
       {items.map((item, id) => (
-        <li key={id}>
+        <ListItem key={id}>
           <Contact contact={item} onDelete={onDelete} />
-        </li>
+        </ListItem>
       ))}
-    </ul>
+    </List>
   );
 };
 
