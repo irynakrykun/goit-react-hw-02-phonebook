@@ -1,5 +1,5 @@
 import { Description, Button } from '../Contact/Contact.styled';
-import PropTypes from 'prop-types';
+// import PropTypes from 'prop-types';
 
 const Contact = ({ contact: { id, name, number }, onDelete }) => {
   return (
