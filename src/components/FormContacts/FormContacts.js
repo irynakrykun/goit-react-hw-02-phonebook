@@ -1,6 +1,8 @@
 // import PropTypes from 'prop-types';
 import { Formik, Form, Field, ErrorMessage } from 'formik';
+import { nanoid } from 'nanoid';
 import * as yup from 'yup';
+
 
 const schema = yup.object().shape({
   name: yup.string().required(),
@@ -10,6 +12,7 @@ const schema = yup.object().shape({
 const initialValues = {
   name: '',
   number: '',
+  id: nanoid(),
   
 };
 

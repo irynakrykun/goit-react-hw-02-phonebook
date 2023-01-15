@@ -4,7 +4,7 @@ import { Contain,PhoneBook,PhoneContacts } from './App.styled';
 import Filter from '../Filter/Filter';
 import ContactList from '../ContactList/ContactList';
 import initialContacts from '../contacts.json';
-import { nanoid } from 'nanoid';
+
 
 
 class App extends Component {
@@ -14,7 +14,7 @@ class App extends Component {
   };
   addContact = values => {
     this.setState(prevState => ({
-      contacts: [...prevState.contacts, {  values ,  id: nanoid() } ],
+      contacts: [...prevState.contacts,   values  ],
     }));
   };
   deleteContact = (contactId) => {
