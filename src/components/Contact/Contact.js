@@ -10,11 +10,11 @@ const Contact = ({ contact: { id, name, number }, onDelete }) => {
     </>
   );
 };
-Contact.propTypes = {
-  id: PropTypes.string.isRequired,
-  name: PropTypes.string.isRequired,
-  number: PropTypes.string.isRequired,
-  onDelete: PropTypes.func.isRequired,
-};
+// Contact.propTypes = {
+//   id: PropTypes.string.isRequired,
+//   name: PropTypes.string.isRequired,
+//   number: PropTypes.string.isRequired,
+//   onDelete: PropTypes.func.isRequired,
+// };
 
 export default Contact;

@@ -12,8 +12,8 @@ const ContactList = ({ items,onDelete }) => {
     </List>
   );
 };
-ContactList.propTypes = {
-  items: PropTypes.array.isRequired,
-  onDelete: PropTypes.func.isRequired,
-}
+// ContactList.propTypes = {
+//   items: PropTypes.array.isRequired,
+//   onDelete: PropTypes.func.isRequired,
+// }
 export default ContactList;

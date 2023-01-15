@@ -29,10 +29,11 @@ class App extends Component {
   };
   
   render() {
-//  const normalizedFilter = this.state.filter.toLowerCase();
-//     const visibleContacts = this.state.contacts.filter(contact =>
-//       contact.text.toLowerCase().includes(normalizedFilter));
-
+    // const normalizedFilter = this.state.filter.toLowerCase();
+    
+    // const visibleContacts = this.state.contacts.filter(contact =>
+    //   contact.text.toLowerCase().includes(normalizedFilter));
+   
     return (
       <Contain>
         <PhoneBook>Phonebook</PhoneBook>
