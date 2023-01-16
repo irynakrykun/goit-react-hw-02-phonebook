@@ -1,24 +1,22 @@
-// import PropTypes from 'prop-types';
-import { Formik, Form, Field, ErrorMessage } from 'formik';
+import PropTypes from 'prop-types';
+import { Formik, Field } from 'formik';
 import { nanoid } from 'nanoid';
 import * as yup from 'yup';
-
+import { Button, FormLabel, FormErr } from './FormContacts.styled';
 
 const schema = yup.object().shape({
   name: yup.string().required(),
-  number: yup.string().required(),
+  number: yup.string().min(9).max(11).required(),
 });
 
 const initialValues = {
   name: '',
   number: '',
   id: nanoid(4),
-  
 };
 
 const FormContacts = ({ onSubmit }) => {
   const handleSubmit = (values, { resetForm }) => {
-    console.log(values);
     resetForm();
     onSubmit(values);
   };
@@ -28,21 +26,34 @@ const FormContacts = ({ onSubmit }) => {
       validationSchema={schema}
       onSubmit={handleSubmit}
     >
-      <Form autoComplete="off">
+      <FormLabel autoComplete="off">
         <label htmlFor="name">
-          Name
+          Name 
           <Field type="text" name="name" />
-          <ErrorMessage name="name" />
+          <FormErr name="name" />
         </label>
         <label htmlFor="number">
-          Number
+          Number 
           <Field type="tel" name="number" />
-          <ErrorMessage name="number" />
+          <FormErr name="number" />
         </label>
-        <button type="submit">Add contact</button>
-      </Form>
+        <Button type="submit">Add contact</Button>
+      </FormLabel>
     </Formik>
   );
+};
+
+FormContacts.propTypes = {
+  initialValues: PropTypes.shape({
+    id: PropTypes.string.isRequired,
+    name: PropTypes.string.isRequired,
+    number: PropTypes.string.isRequired,
+  }),
+  validationSchema: PropTypes.shape({
+    name: PropTypes.string.isRequired,
+    number: PropTypes.string.isRequired,
+  }),
+  onSubmit: PropTypes.func.isRequired,
 };
 
 export default FormContacts;
