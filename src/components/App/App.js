@@ -11,15 +11,14 @@ class App extends Component {
     filter: ' ',
   };
   addContact = values => {
-    this.state.contacts.map(contact => contact.name === values.name)
-      ? alert(
-          `${values.name},
-          This user is already in the contact list.`
-          
-        ):
-      this.setState(prevState => ({ 
-          contacts: [...prevState.contacts, values],
-        }));
+    const { contacts } = this.state;
+    if (contacts.find(contact => contact.name === values.name)) {
+      return alert(`${values.name} is already in contact`);
+    }
+
+    this.setState(prevState => ({
+      contacts: [...prevState.contacts, values],
+    }));
   };
   deleteContact = contactId => {
     console.log(contactId);
@@ -36,8 +35,8 @@ class App extends Component {
   render() {
     const normalizedFilter = this.state.filter.toLowerCase();
 
-    const visibleContacts = this.state.contacts.filter(contact => 
-       contact.name.toLowerCase().includes(normalizedFilter)
+    const visibleContacts = this.state.contacts.filter(contact =>
+      contact.name.toLowerCase().includes(normalizedFilter)
     );
 
     return (
