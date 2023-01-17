@@ -8,14 +8,14 @@ import initialContacts from '../contacts.json';
 class App extends Component {
   state = {
     contacts: initialContacts,
-    filter: ' ',
+    filter: '',
   };
   addContact = values => {
     const { contacts } = this.state;
     if (contacts.find(contact => contact.name === values.name)) {
       return alert(`${values.name} is already in contact`);
     }
-
+    
     this.setState(prevState => ({
       contacts: [...prevState.contacts, values],
     }));
@@ -34,11 +34,11 @@ class App extends Component {
 
   render() {
     const normalizedFilter = this.state.filter.toLowerCase();
-
+console.log(this.state.contacts);
     const visibleContacts = this.state.contacts.filter(contact =>
       contact.name.toLowerCase().includes(normalizedFilter)
     );
-
+console.log(visibleContacts);
     return (
       <Contain>
         <PhoneBook>Phonebook</PhoneBook>
